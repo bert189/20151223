@@ -1,0 +1,37 @@
+<form action="ma_page.php"method="POST" enctype="multipart/form-data">
+	<input type="text" name="file_name" />
+	<input type="file" name="fichier" />
+	<input type="submit" value="Envoyer" />
+</form>
+
+
+
+$FILES['fichier'] // Récupérer les infos relatives au fichier envoyé via le formulaire
+
+$FILES['fichier']['name'] // Permet de récupérer le nom  de mon super fichier
+
+$FILES['fichier']['type'] // Permet de récupérer le type du fichier
+
+$FILES['fichier']['tmp_name'] // Permet de récupérer le chemin temporaire du fichier 
+
+$FILES['fichier']['size'] // Permet de récupérer la taille du fichier en octets
+
+$FILES['fichier']['error'] // si différent de zéro, plus rien ne va :(
+
+move_uploaded_file() // Fonction permettant d'héberger (uploader) le fichier
+
+image/jpg, image/jpeg, image/pjpeg // Types de fichier JPG
+
+
+
+toujours renommer le fichier
+exemple : renommer l'image uploadée en :
+	- supprimant les espaces
+	- supprimant les accents éventuels
+	- récupérant son extension
+
+str_replace() => permet de remplacer des caractères dans une chaine
+
+$extension = substr(strrchr($nomDuFichier, '.'), 1); =>permet de récupérer l'extension du fichier (jpg, gif, png, etc...)
+
+Pour réaffecter l'extension du fichier on utilisera la concaténation :-)
